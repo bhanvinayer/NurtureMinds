@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Brain, Camera, Users, MessageCircle, BarChart, Sparkles, Info } from 'lucide-react'
+import { Brain, Camera, Users, MessageCircle, BarChart, Sparkles, Info, Trophy, Headset, Zap } from 'lucide-react'
 import WelcomeBanner from '@/components/WelcomeBanner'
 import FeaturePreviewModal from '@/components/FeaturePreviewModal'
 
@@ -52,6 +52,27 @@ export default function HomePage() {
       description: "Engaging, adaptive games that build memory, attention, language, and social-emotional skills.",
       href: "/games",
       color: "bg-pink-500"
+    },
+    {
+      icon: Zap,
+      title: "AI Learning Paths",
+      description: "Personalized learning journeys powered by AI that adapt to your child's unique needs and progress.",
+      href: "/learning-paths",
+      color: "bg-indigo-500"
+    },
+    {
+      icon: Trophy,
+      title: "Achievement System",
+      description: "Gamified learning with badges, leaderboards, and rewards to motivate and celebrate progress.",
+      href: "/gamification",
+      color: "bg-yellow-500"
+    },
+    {
+      icon: Headset,
+      title: "AR/VR Experiences",
+      description: "Immersive learning environments using Augmented and Virtual Reality for enhanced engagement.",
+      href: "/immersive",
+      color: "bg-purple-600"
     }
   ]
 
@@ -125,7 +146,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -176,15 +197,15 @@ export default function HomePage() {
             <div className="grid md:grid-cols-3 gap-8 mt-12">
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-600 mb-2">AI-Powered</div>
-                <p className="text-gray-600">Advanced machine learning for personalized insights</p>
+                <p className="text-gray-600">Advanced machine learning for personalized insights and adaptive learning paths</p>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600 mb-2">Evidence-Based</div>
-                <p className="text-gray-600">Backed by research and clinical best practices</p>
+                <p className="text-gray-600">Backed by research, clinical best practices, and continuous assessment data</p>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600 mb-2">Family-Centered</div>
-                <p className="text-gray-600">Designed with real families and their needs in mind</p>
+                <div className="text-3xl font-bold text-purple-600 mb-2">Immersive</div>
+                <p className="text-gray-600">AR/VR experiences, gamification, and voice control for engaging interactions</p>
               </div>
             </div>
           </motion.div>

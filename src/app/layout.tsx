@@ -4,6 +4,9 @@ import "./globals.css";
 import Navigation from '@/components/Navigation'
 import { OnboardingProvider } from '@/contexts/OnboardingContext'
 import OnboardingWrapper from '@/components/OnboardingWrapper'
+import VoiceNavigation from '@/components/VoiceNavigation'
+import { SidebarProvider } from '@/hooks/useSidebar'
+import MainContentArea from '@/components/MainContentArea'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,9 +24,18 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <OnboardingProvider>
-          <Navigation />
-          <main>{children}</main>
-          <OnboardingWrapper />
+          <SidebarProvider>
+            <div className="min-h-screen bg-gray-50">
+              <Navigation />
+              
+              <MainContentArea>
+                {children}
+              </MainContentArea>
+            </div>
+            
+            <OnboardingWrapper />
+            <VoiceNavigation />
+          </SidebarProvider>
         </OnboardingProvider>
       </body>
     </html>
