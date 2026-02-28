@@ -1,10 +1,15 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { Brain, Camera, Users, MessageCircle, BarChart, Sparkles } from 'lucide-react'
+import { Brain, Camera, Users, MessageCircle, BarChart, Sparkles, Info } from 'lucide-react'
+import WelcomeBanner from '@/components/WelcomeBanner'
+import FeaturePreviewModal from '@/components/FeaturePreviewModal'
 
 export default function HomePage() {
+  const [activeModal, setActiveModal] = useState<string | null>(null)
+  
   const features = [
     {
       icon: Brain,
@@ -52,6 +57,9 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      {/* Welcome Banner */}
+      <WelcomeBanner showForReturningUsers={true} />
+      
       {/* Hero Section */}
       <section className="relative px-6 py-20 text-center">
         <div className="max-w-4xl mx-auto">
@@ -82,18 +90,20 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <Link 
-              href="/assessment" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            <button 
+              onClick={() => setActiveModal('assessment')}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2"
             >
-              Start Assessment
-            </Link>
-            <Link 
-              href="/video-analysis" 
-              className="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors"
+              <span>Start Assessment</span>
+              <Info className="w-4 h-4" />
+            </button>
+            <button 
+              onClick={() => setActiveModal('video-analysis')}
+              className="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2"
             >
-              Try Video Analysis
-            </Link>
+              <span>Try Video Analysis</span>
+              <Info className="w-4 h-4" />
+            </button>
           </motion.div>
         </div>
       </section>
@@ -124,7 +134,10 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
-                <Link href={feature.href} className="block">
+                <button 
+                  onClick={() => setActiveModal(feature.href.slice(1))}
+                  className="block w-full text-left"
+                >
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100">
                     <div className={`w-12 h-12 ${feature.color} rounded-lg flex items-center justify-center mb-4`}>
                       <feature.icon className="w-6 h-6 text-white" />
@@ -136,7 +149,7 @@ export default function HomePage() {
                       {feature.description}
                     </p>
                   </div>
-                </Link>
+                </button>
               </motion.div>
             ))}
           </div>
@@ -209,6 +222,15 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
+      
+      {/* Feature Preview Modals */}
+      {activeModal && (
+        <FeaturePreviewModal
+          featureKey={activeModal}
+          isOpen={true}
+          onClose={() => setActiveModal(null)}
+        />
+      )}
     </div>
   )
 }

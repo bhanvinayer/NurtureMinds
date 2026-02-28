@@ -4,11 +4,13 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Heart, Home, Brain, Video, Gamepad2, MessageSquare, Bot, BarChart3, User, LogOut } from 'lucide-react'
+import { Menu, X, Heart, Home, Brain, Video, Gamepad2, MessageSquare, Bot, BarChart3, User, LogOut, HelpCircle } from 'lucide-react'
+import { useOnboarding } from '@/contexts/OnboardingContext'
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const { restartOnboarding } = useOnboarding()
 
   const navItems = [
     { href: '/', label: 'Home', icon: Home },
@@ -67,8 +69,15 @@ export default function Navigation() {
               )
             })}
             
-            {/* User Profile */}
-            <div className="ml-4 flex items-center space-x-4">
+            {/* User Profile & Actions */}
+            <div className="ml-4 flex items-center space-x-2">
+              <button 
+                onClick={restartOnboarding}
+                className="p-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors"
+                title="Take Platform Tour"
+              >
+                <HelpCircle className="h-5 w-5" />
+              </button>
               <button className="p-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-lg transition-colors">
                 <User className="h-5 w-5" />
               </button>
@@ -120,6 +129,16 @@ export default function Navigation() {
               })}
               
               <div className="border-t border-gray-200 pt-2 mt-2">
+                <button 
+                  onClick={() => {
+                    restartOnboarding()
+                    setIsMobileMenuOpen(false)
+                  }}
+                  className="flex items-center space-x-3 px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors w-full"
+                >
+                  <HelpCircle className="h-5 w-5" />
+                  <span>Take Platform Tour</span>
+                </button>
                 <button className="flex items-center space-x-3 px-3 py-3 rounded-lg text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors w-full">
                   <User className="h-5 w-5" />
                   <span>Profile</span>
