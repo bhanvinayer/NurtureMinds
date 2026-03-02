@@ -4,7 +4,6 @@
 
 ![Nurture Minds Logo](https://via.placeholder.com/200x100/3B82F6/FFFFFF?text=Nurture+Minds)
 
-**🏆 HACKATHON WINNING PROJECT 🏆**
 
 *Revolutionizing neurodivergent support through cutting-edge AI technology*
 
@@ -401,5 +400,6 @@ Special thanks to:
 - 🎓 Educational institution dashboard
 
 ---
+
 
 **Ready to revolutionize neurodivergent support? Let's build the future together! 🚀**
