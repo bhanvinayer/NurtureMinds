@@ -14,7 +14,7 @@
 
 </div>
 
-[🚀 **LIVE DEMO**]((https://nurture-mind-s.vercel.app/))
+[🚀 **LIVE DEMO**](https://nurture-mind-s.vercel.app/)
 ---
 
 ## 🎯 **THE VISION**
@@ -359,4 +359,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 
 **Ready to revolutionize neurodivergent support? Let's build the future together! 🚀**
+
 
