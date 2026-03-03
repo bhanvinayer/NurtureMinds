@@ -8,14 +8,13 @@
 *Revolutionizing neurodivergent support through cutting-edge AI technology*
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat&logo=next.js)](https://nextjs.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104-009688?style=flat&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-6.0-47A248?style=flat&logo=mongodb)](https://mongodb.com/)
 [![OpenCV](https://img.shields.io/badge/OpenCV-4.8-5C3EE8?style=flat&logo=opencv)](https://opencv.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=flat&logo=typescript)](https://typescriptlang.org/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat&logo=docker)](https://docker.com/)
 
 </div>
 
+[🚀 **LIVE DEMO**]((https://nurture-mind-s.vercel.app/))
 ---
 
 ## 🎯 **THE VISION**
@@ -185,48 +184,6 @@
 
 ---
 
-## 🏗️ **PROJECT STRUCTURE**
-
-```
-nurture/
-├── 📁 backend/                 # FastAPI Backend
-│   ├── 📁 routes/             # API route modules
-│   │   ├── auth.py           # Authentication endpoints
-│   │   ├── assessment.py     # Cognitive assessment API
-│   │   ├── video_analysis.py # Video behavior analysis
-│   │   ├── forum.py          # Community forum API
-│   │   ├── chatbot.py        # AI assistant endpoints
-│   │   ├── dashboard.py      # Progress dashboard API
-│   │   └── games.py          # Cognitive games API
-│   ├── 📁 models/             # AI/ML models
-│   │   ├── video_analyzer.py # OpenCV emotion detection
-│   │   ├── assessment_ai.py  # Adaptive assessment logic
-│   │   └── factchecker_ai.py # Evidence-based fact checker
-│   ├── 📁 schemas/           # Pydantic data models
-│   ├── main.py               # FastAPI application entry
-│   ├── database.py           # MongoDB connection
-│   └── requirements.txt      # Python dependencies
-├── 📁 frontend/               # Next.js Frontend
-│   ├── 📁 src/app/           # App Router pages
-│   │   ├── page.tsx          # Homepage
-│   │   ├── assessment/       # Cognitive assessment
-│   │   ├── video-analysis/   # Video behavior analysis
-│   │   ├── games/            # Cognitive training games
-│   │   ├── forum/            # Parent community
-│   │   ├── chatbot/          # AI assistant
-│   │   └── dashboard/        # Progress tracking
-│   ├── 📁 src/components/    # Reusable components
-│   ├── package.json          # Node.js dependencies
-│   └── tailwind.config.js    # TailwindCSS configuration
-├── 📁 .github/              # GitHub workflows
-├── docker-compose.yml       # Multi-container deployment
-├── nginx.conf              # Reverse proxy configuration
-├── DEMO_SCRIPT.md          # Hackathon demo guide
-├── DEPLOYMENT_GUIDE.md     # Production deployment
-└── README.md               # This file
-```
-
----
 
 ## ⚡ **QUICK START**
 
@@ -251,20 +208,7 @@ cp .env.example .env
 nano .env
 ```
 
-### **3. Backend Setup**
-```bash
-cd backend
-
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Start server
-uvicorn main:app --reload --port 8000
-```
+`
 
 ### **4. Frontend Setup**
 ```bash
@@ -276,20 +220,6 @@ npm install
 # Start development server
 npm run dev
 ```
-
-### **5. Database Setup**
-```bash
-# MongoDB with Docker (easiest)
-docker run -d --name mongodb -p 27017:27017 mongo:6.0
-
-# Or install MongoDB locally
-# https://docs.mongodb.com/manual/installation/
-```
-
-### **6. Access Application**
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:8000
-- **API Docs**: http://localhost:8000/docs
 
 ---
 
@@ -309,9 +239,7 @@ docker-compose logs -f
 
 ### **Services Included**
 - **Frontend**: Next.js application (port 3000)
-- **Backend**: FastAPI server (port 8000)
-- **Database**: MongoDB (port 27017)
-- **Reverse Proxy**: Nginx (port 80/443)
+
 
 ---
 
@@ -361,28 +289,7 @@ docker-compose logs -f
 
 ---
 
-## 🏆 **HACKATHON ACHIEVEMENTS**
 
-### **✅ Technical Excellence**
-- **Full-stack TypeScript** application
-- **Advanced AI integration** (OpenCV, TensorFlow)
-- **Real-time WebSocket** communication
-- **Production-ready architecture**
-- **Comprehensive test coverage**
-
-### **✅ Social Impact**
-- **Addresses global need**: Neurodivergent support
-- **Democratizes access**: Expensive tools made accessible
-- **Evidence-based**: Reduces harmful misinformation
-- **Family-centered**: Comprehensive ecosystem approach
-
-### **✅ Innovation**
-- **First-to-market**: AI video behavior analysis for children
-- **Adaptive AI**: Real-time assessment adjustment
-- **Integrated platform**: One-stop solution
-- **Scalable architecture**: Ready for global deployment
-
----
 
 ## 🤝 **CONTRIBUTING**
 
@@ -410,47 +317,18 @@ We welcome contributions from developers, researchers, and advocates passionate 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
 
-## 📞 **SUPPORT & CONTACT**
-
-### **Documentation**
-- 📖 **Demo Script**: [DEMO_SCRIPT.md](DEMO_SCRIPT.md)
-- 🚀 **Deployment Guide**: [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
-- 🔧 **API Documentation**: http://localhost:8000/docs
-
-### **Community**
-- 💬 **Discord**: Join our developer community
-- 🐛 **Issues**: Report bugs and request features
-- 📧 **Email**: support@nurture-minds.com
-- 🌐 **Website**: https://nurture-minds.com
-
-### **Team**
-- 👨‍💻 **Lead Developer**: [Your Name](https://github.com/yourusername)
-- 🧠 **AI/ML Specialist**: [Team Member](https://github.com/teammember)
-- 🎨 **UI/UX Designer**: [Designer](https://github.com/designer)
 
 ---
 
-## 🌟 **ACKNOWLEDGMENTS**
 
-Special thanks to:
-- **Autism research community** for evidence-based insights
-- **Child psychology experts** for assessment frameworks
-- **Open source contributors** for amazing tools
-- **Neurodivergent families** who inspired this platform
 
----
-
-<div align="center">
-
-### **🎉 BUILT WITH ❤️ FOR NEURODIVERGENT FAMILIES WORLDWIDE**
+### **FOR NEURODIVERGENT FAMILIES WORLDWIDE**
 
 *"Every child deserves to thrive - we're building the technology to make it happen."*
 
 **⭐ Star this repo if you believe in our mission! ⭐**
 
-[🚀 **LIVE DEMO**](https://nurture-minds-demo.com) | [📖 **DOCS**](https://docs.nurture-minds.com) | [💬 **COMMUNITY**](https://discord.gg/nurture-minds)
 
 </div>
 
@@ -481,3 +359,4 @@ Special thanks to:
 
 
 **Ready to revolutionize neurodivergent support? Let's build the future together! 🚀**
+
